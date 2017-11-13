@@ -1,14 +1,8 @@
-i{
-  "name": "e-voting application",
-  "description": "",
+{
+  "name": "e-voting",
   "version": "0.0.1",
   "main": "server.js",
-  "scripts": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AleitaT/e-voting.git"
-  },
+  "scripts": {},
   "keywords": "",
   "author": "",
   "license": "ISC",
