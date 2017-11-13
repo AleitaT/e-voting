@@ -1,0 +1,35 @@
+// - layout.pug
+
+html 
+  head 
+    title #{title}
+    meta(charset='utf-8' lang='en')
+    meta(name='description', content='#{description}')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+    style
+      include ../public/stylesheets/style.css
+
+    script 
+
+  body 
+    div.main
+      block header
+        ul#nav-links.menu-divider
+          li
+            a(href='/voter/About' class={active: title === 'About'}) About
+          li
+            a(href='/voter/ballot' class={active: title === 'Ballot'}) Ballot	
+          li
+            a(href='/voter/logout' class={active: title === 'Logout'}) Logout
+
+      block contents
+
+      block footer 
+      
+      div#footer
+        ul.foot-links
+          li
+            a(href='/pages/terms-of-use') Terms of Use
+          li
+            a(href='/pages/privacy-policy') Privacy Policy
