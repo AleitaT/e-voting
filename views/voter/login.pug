@@ -1,3 +1,24 @@
 //- login.pug
 
-extends layout.pug
+extends ../layout.pug
+
+block contents
+  div.contents
+    h1.medium Login Page  
+    form(method='POST' action='/login')
+        label(for="fName") 
+        input#fName(type='text', placeholder='First Name' name='fName')
+        br
+        label(for="lName") 
+        input#lName(type='text', placeholder='Last Name' name='lName')
+        br
+        label(for="Birthdate") 
+        input#Birthdate(type='date' name='Birthdate')
+        br
+        label(for="token") 
+        input#token(type='password', placeholder='Authorization Token' name='token')
+        br
+        a(href="http://#") Forgot Your Authorization Token?
+        br 
+        p
+            button(type='submit') Log In
