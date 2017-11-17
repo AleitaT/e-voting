@@ -1,0 +1,30 @@
+//- ballot.pug
+
+extends ../layout.pug
+
+block contents
+
+    h1.medium Ballot
+    p.United State of America, Oregon, Corvallis
+    p.Voter name
+    p.voter address
+    p.voter authorization token
+
+    form(method='POST' action='/postBallot')
+
+       h2.medium Offices
+       ul
+       li Mayor
+
+           label(for="candidate1")
+           input#candidate1(type="radio" name="candidate1" value="1")
+           br
+           input#candidate2(type="radio" name="candidate1" value="2")
+           br
+
+       li Counsellor
+           ul
+               li XX, A party
+               li YY, B party
+
+
