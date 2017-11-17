@@ -5,12 +5,18 @@ extends ../layout.pug
 
 block contents
     div.contents
-        h2 E-Vote
-        h1 Your Ballot
+        h1 E-Vote
+        h2 Your Ballot
 
-        p#voterName
-        p#voterAddress
-        p#voterAuthToken
+        div.contents
+            h4 Name
+            p#voterName
+        div.contents
+            h4 Address
+            p#voterAddress
+        div.contents
+            h4 Autorization
+            p#voterAuthToken
 
         form#postBallot(method='' action='')
 
@@ -18,7 +24,6 @@ block contents
 
             div.form-group
                 h3#Ofc1
-
                 input#Cnd11(type="radio" name="Ofc1" value="Ofc1Cnd1")
                 |
                 label#Ofc1Cnd1(for="Ofc1")
@@ -30,11 +35,11 @@ block contents
                 br
 
             div.form-group
-                h3#Ofc2
 
-                input#Cnd21(type="radio" name="Ofc1" value="Ofc2Cnd1")
+                h3#Ofc2
+                input#Cnd21(type="radio" name="Ofc2" value="Ofc2Cnd1")
                 |
-                label#Ofc12Cnd1(for="Ofc2")
+                label#Ofc2Cnd1(for="Ofc2")
                 br
 
                 input#Cnd22(type="radio" name="Ofc2" value="Ofc2Cnd2")
@@ -46,7 +51,7 @@ block contents
 
             div.form-group
 
-            input#submit(type='button' placeholder='submit' onclick="test()")
+            button.btn.btn-primary(type='button' onclick="getBallot()") Submit
 
 
 
