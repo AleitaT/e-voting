@@ -22,11 +22,20 @@ document.getElementById("voterAddress").innerHTML = voter.address;
 document.getElementById("voterAuthToken").innerHTML = voter.authToken;
 
 document.getElementById("Ofc1").innerHTML = ballot.Ofc1;
+document.getElementById("Ofc2").innerHTML = ballot.Ofc2;
 
 document.getElementById("Ofc1Cnd1").innerHTML = ballot.Ofc1Cnd1;
 document.getElementById("Ofc1Cnd2").innerHTML = ballot.Ofc1Cnd2;
+document.getElementById("Ofc2Cnd1").innerHTML = ballot.Ofc2Cnd1;
+document.getElementById("Ofc2Cnd2").innerHTML = ballot.Ofc2Cnd2;
 
-function test() {
-    
-    console.log(document.getElementById("postBallot").elements.value);
+function getBallot() {
+    var x = document.getElementById("postBallot").elements;
+    var obj = {};
+    for( var i=0 ; i < x.length ; i++ ) {
+        var item = x.item(i);
+        obj[item.name] = item.value;
+    }
+    console.log(obj);
+
 };
