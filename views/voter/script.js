@@ -27,6 +27,6 @@ document.getElementById("Ofc1Cnd1").innerHTML = ballot.Ofc1Cnd1;
 document.getElementById("Ofc1Cnd2").innerHTML = ballot.Ofc1Cnd2;
 
 function test() {
-    // var x = document.getElementById("postBallot").elements[0].value;
-    console.log(document.getElementById("postBallot").elements[0].value);
+    
+    console.log(document.getElementById("postBallot").elements.value);
 };
