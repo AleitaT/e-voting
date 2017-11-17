@@ -11,18 +11,21 @@ block contents
         div.contents
             h4 Name
             p#voterName
-        div.contents
+
             h4 Address
             p#voterAddress
-        div.contents
-            h4 Autorization
+
+            h4 Token
             p#voterAuthToken
+
+
 
         form#postBallot(method='' action='')
 
 
 
             div.form-group
+
                 h3#Ofc1
                 input#Cnd11(type="radio" name="Ofc1" value="Ofc1Cnd1")
                 |
@@ -47,11 +50,8 @@ block contents
                 label#Ofc2Cnd2(for="Ofc2")
                 br
 
-
-
             div.form-group
-
-            button.btn.btn-primary(type='button' onclick="getBallot()") Submit
+                button#submit(type='button' onclick="getBallot()") Submit
 
 
 
