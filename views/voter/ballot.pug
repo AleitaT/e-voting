@@ -2,29 +2,53 @@
 
 extends ../layout.pug
 
+
 block contents
+    div.contents
+        h2 E-Vote
+        h1 Your Ballot
 
-    h1.medium Ballot
-    p.United State of America, Oregon, Corvallis
-    p.Voter name
-    p.voter address
-    p.voter authorization token
+        p#voterName
+        p#voterAddress
+        p#voterAuthToken
 
-    form(method='POST' action='/postBallot')
-
-       h2.medium Offices
-       ul
-       li Mayor
-
-           label(for="candidate1")
-           input#candidate1(type="radio" name="candidate1" value="1")
-           br
-           input#candidate2(type="radio" name="candidate1" value="2")
-           br
-
-       li Counsellor
-           ul
-               li XX, A party
-               li YY, B party
+        form#postBallot(method='' action='')
 
 
+
+            div.form-group
+                h3#Ofc1
+
+                input#Cnd11(type="radio" name="Ofc1" value="Ofc1Cnd1")
+                |
+                label#Ofc1Cnd1(for="Ofc1")
+                br
+
+                input#Cnd12(type="radio" name="Ofc1" value="Ofc1Cnd2")
+                |
+                label#Ofc1Cnd2(for="Ofc1")
+                br
+
+            div.form-group
+                h3#Ofc2
+
+                input#Cnd21(type="radio" name="Ofc1" value="Ofc2Cnd1")
+                |
+                label#Ofc12Cnd1(for="Ofc2")
+                br
+
+                input#Cnd22(type="radio" name="Ofc2" value="Ofc2Cnd2")
+                |
+                label#Ofc2Cnd2(for="Ofc2")
+                br
+
+
+
+            div.form-group
+
+            input#submit(type='button' placeholder='submit' onclick="test()")
+
+
+
+    script
+        include script.js
