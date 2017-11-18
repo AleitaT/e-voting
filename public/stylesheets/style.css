@@ -61,7 +61,7 @@ form#login {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-  form#login input#submit {
+  form#login button#submitLogin {
     width: 100%;
     background-color: #1C140D;
     color: #FFFFFF !important;
