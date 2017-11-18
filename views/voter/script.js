@@ -17,6 +17,12 @@ var ballot = {
     Ofc2Cnd2: "Sean Solberg, Socialist Party"
 };
 
+var inputValues = {
+    votes : {},
+    voterCredentials : {},
+
+}
+
 document.getElementById("voterName").innerHTML = voter.fName + ' ' + voter.lName;
 document.getElementById("voterAddress").innerHTML = voter.address;
 document.getElementById("voterAuthToken").innerHTML = voter.authToken;
@@ -31,11 +37,29 @@ document.getElementById("Ofc2Cnd2").innerHTML = ballot.Ofc2Cnd2;
 
 function getBallot() {
     var x = document.getElementById("postBallot").elements;
-    var obj = {};
+    // var votes = {};
     for( var i=0 ; i < x.length ; i++ ) {
         var item = x.item(i);
-        obj[item.name] = item.value;
+        inputValues.votes[item.name] = item.value;
     }
-    console.log(obj);
+    console.log(inputValues.votes);
+
 
 };
+
+// var voterInputs = getBallot();
+
+function login() {
+    var x = document.getElementById("login").elements;
+    // var voterCredentials = {};
+    for( var i=0 ; i < x.length ; i++ ) {
+        var item = x.item(i);
+        inputValues.voterCredentials[item.name] = item.value;
+    }
+    console.log(inputValues.voterCredentials);
+
+
+};
+
+
+// var votedCandidates = login();
