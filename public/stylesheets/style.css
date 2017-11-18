@@ -3,98 +3,137 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 body {
   background-color: #CBE86B;
-  font-family: "fira-sans", sans-serif; }
-  body p {
-    font-family: 'sans-serif'; }
+  font-family: "fira-sans", sans-serif;
+}
+body p {
+  color: #1C140D;
+  font-family: "sans-serif";
+}
 
 h1 {
   font-size: 2em;
   font-weight: bold;
-  font-color: #CBE86B; }
+  font-color: #1C140D;
+}
 
 h2 {
-  font-size: 1.8em;
-  font-weight: bold; }
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1C140D;
+}
 
 h3 {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+}
 
 div.main ul#nav-links {
   height: 50;
   width: 100%;
-  background-color: #CBE86B;
+  background-color: #1C140D;
   margin: 0 0 0 0;
-  padding: 0; }
-  div.main ul#nav-links li {
-    text-align: center;
-    width: 25%;
-    text-decoration: none;
-    display: inline-block;
-    margin: 20 0 20 0; }
-    div.main ul#nav-links li a {
-      text-decoration: none;
-      font-size: 1.1em;
-      color: #1C140D; }
+  padding: 0;
+}
+div.main ul#nav-links li {
+  text-align: center;
+  width: 25%;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20 0 20 0;
+}
+div.main ul#nav-links li a {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #F2E9E1;
+}
 
 div.contents {
   width: 80%;
-  margin: auto; }
+  margin: 10 auto 0 auto;
+  background-color: #F2E9E1;
+  color: #1C140D;
+  border: solid #1C140D 0.5px;
+  padding: 10;
+  min-height: 100%;
+  position: relative;
+}
 
+/******* LOGIN PAGE ********/
 form#login {
   width: 80%;
-  margin: 0 auto 0 auto; }
-  form#login label {
-    text-align: left;
-    color: #FFFFFF; }
-  form#login input#fname, form#login input#lname, form#login input#birthdate, form#login input#token {
-    width: 100%;
-    padding: 6px 20px;
-    margin: 6px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-  form#login button#submitLogin {
-    width: 100%;
-    background-color: #1C140D;
-    color: #FFFFFF !important;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1em; }
-  form#login div.form-group {
-    margin: 10 0 10 0; }
+  margin: 0 auto 0 auto;
+  background-color: #FFFFFF;
+  border: solid #1C140D 0.5px;
+  padding: 10;
+}
+form#login label {
+  text-align: left;
+  color: #1C140D;
+}
+form#login input#fname, form#login input#lname, form#login input#birthdate, form#login input#token input#voterID {
+  width: 100%;
+  padding: 6px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form#login button#submitLogin {
+  width: 100%;
+  height: 50px;
+  background-color: #CBE86B;
+  color: #FFFFFF !important;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+form#login div.form-group {
+  margin: 10 0 10 0;
+}
 
-form#postBallot {
-  width: 80%;
-  margin: 0 auto 0 auto; }
+/****** END LOGIN PAGE *******/
+/*********** BEGIN BALLOT PAGE **********/
+div.voter {
+  background-color: #FFFFFF;
+  padding: 10;
+  margin: 10 0 10 0;
+  border: solid #1C140D 0.5px;
+  border-radius: 5px;
+}
 
-  form#postBallot button#submit {
-    width: 100%;
-    background-color: #1C140D;
-    color: #FFFFFF !important;
-    padding: 10px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 2.0em; }
+div.form-group {
+  border: solid #1C140D 0.5px;
+  padding: 10px;
+  margin: 10 0 10 0;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+button#submit {
+  width: 100%;
+  height: 50px;
+  background-color: #CBE86B;
+  font-size: 1.4em;
+}
 
 div#footer {
   width: 80%;
-  font-size: .8em; }
-  div#footer ul.foot-links li {
-    list-style: none; }
-    div#footer ul.foot-links li a {
-      text-decoration: none; }
-
-/*# sourceMappingURL=style.css.map */
+  font-size: 0.8em;
+}
+div#footer ul.foot-links li {
+  list-style: none;
+}
+div#footer ul.foot-links li a {
+  text-decoration: none;
+}

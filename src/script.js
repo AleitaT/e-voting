@@ -10,12 +10,13 @@ var approval = function() {
 	}
 	console.log("approvaltoken", approvalToken);
 	// call the ballot page and send credentials so we know which ballot to load
-	var req = new XMLHttpRequest();
-	req.open('GET', '/voter/ballot', true);
-//	req.addEventListener('load', function() {
-//		if(req.status >=200 && req.status < 400) {
-//
-	req.send(null);
+
+	if (approvalToken == 1) {
+		window.location = '/voter/ballot';
+	}
+	else {
+		alert('Invalid user credentials');
+	}
 	return approvalToken;
 }
 
@@ -71,7 +72,7 @@ function getBallot() {
 
 // var voterInputs = getBallot();
 
-function login() {
+function sendUserCredentials() {
     var x = document.getElementById("login").elements;
     // var voterCredentials = {};
     for( var i=0 ; i < x.length ; i++ ) {
@@ -79,8 +80,8 @@ function login() {
         inputValues.voterCredentials[item.name] = item.value;
     }
     console.log(inputValues.voterCredentials);
+		approval();
 		console.log(approval());
-
 };
 
 

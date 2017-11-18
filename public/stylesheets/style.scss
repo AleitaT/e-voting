@@ -1,10 +1,7 @@
 $white: #FFFFFF;
-$limegreen: #CBE86B;
-$darkgreen: #F2E9E1;
-$grey: #1C140D;
-$black: #CBE86B;
-$thisone: #CBE86B;
-$thatone: #F2E9E1;
+$black: #1C140D;
+$green: #CBE86B;
+$lightBeige: #F2E9E1;
 $font-stack:  'fira-sans', sans-serif;
 
 
@@ -17,10 +14,11 @@ html, body {
 }
 
 body {
-	background-color: #CBE86B;
+	background-color: $green;
 	font-family: $font-stack;
 	
 	p {
+		color: $black;
 	  font-family: 'sans-serif';
   }
 }
@@ -32,8 +30,9 @@ h1 {
 }
 
 h2 {
-	font-size: 1.8em;
-	font-weight: bold;	
+	font-size: 1.5em;
+	font-weight: bold;
+	color: $black;	
 }
 
 h3 {
@@ -57,7 +56,7 @@ div.main {
 			a{ 
 				text-decoration: none;
 				font-size: 1.1em;
-				color: $grey;
+				color: $lightBeige;
 			}
 		}
 	}
@@ -65,19 +64,30 @@ div.main {
 
 div.contents {
 	width: 80%;
-	margin: auto;
+	margin: 10 auto 0 auto;
+	background-color: $lightBeige;
+	color: $black;
+	border: solid $black .5px;
+	padding: 10;
+	min-height: 100%;
+	position:relative;
 }
+
+/******* LOGIN PAGE ********/
 
 form#login {
 	width: 80%;
   margin: 0 auto 0 auto;
+  background-color: $white;
+  border: solid $black .5px;
+  padding: 10;
   
   label {
     text-align: left;
-    color: $white;
+    color: $black;
   }
   
-  input#fname, input#lname, input#birthdate, input#token {
+  input#fname, input#lname, input#birthdate, input#token input#voterID {
     width: 100%;
     padding: 6px 20px;
     margin: 6px 0;
@@ -91,9 +101,10 @@ form#login {
     box-sizing: border-box;
   }
 
-  input#submit {
+  button#submitLogin {
     width: 100%;
-    background-color: $grey;
+    height: 50px;
+    background-color: $green;
     color: $white !important;
     padding: 14px 20px;
     margin: 8px 0;
@@ -107,6 +118,37 @@ form#login {
     margin: 10 0 10 0;
   }
 }
+
+/****** END LOGIN PAGE *******/
+
+/*********** BEGIN BALLOT PAGE **********/
+
+div.voter {
+	background-color: $white;
+	padding: 10;
+	margin: 10 0 10 0;
+	border: solid $black .5px;
+	border-radius: 5px;
+
+}
+div.form-group {
+	border: solid $black .5px;
+	padding: 10px;
+	margin: 10 0 10 0;
+	background-color: $white;
+	border-radius: 5px;
+}
+
+
+
+button#submit {
+	width: 100%;
+	height: 50px;
+	background-color: $green;
+	font-size: 1.4em;
+}
+
+
 
 div#footer {
 	width: 80%;
