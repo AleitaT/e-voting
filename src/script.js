@@ -15,7 +15,7 @@ var approval = function() {
 		window.location = '/voter/ballot';
 	}
 	else {
-		console.log('Invalid user credentials');
+		alert('Invalid user credentials');
 	}
 	return approvalToken;
 }
