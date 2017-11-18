@@ -7,6 +7,9 @@ block contents
 		h1 E-vote Login
 		form#login(method='POST' action='/login')
 			div.form-group
+				label(for='voterID') Voter ID:
+				input#id(type='id', placeholder='ID_123456' name='id')
+			div.form-group
 				label(for="fName") First name:
 				input#fName(type='text', placeholder='First Name' name='fName')
 			div.form-group
@@ -22,4 +25,4 @@ block contents
 			div.form-group
 				button#submitLogin(type='button' onclick="login()") Submit
 	script
-		include script.js
+		include ../../src/script.js

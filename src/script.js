@@ -1,10 +1,32 @@
 
+var approval = function() {
+	var approvalToken = 0;
+	var thisVoter = inputValues.voterCredentials;
+	if((thisVoter.fName == voter.fName) && (thisVoter.lName == voter.lName) && (thisVoter.Birthdate == voter.Birthdate) && (thisVoter.token == voter.token)) {
+	// just used for storing validation
+  approvalToken = 1;
+	} else {
+	approvalToken = 0; 
+	}
+	console.log("approvaltoken", approvalToken);
+	// call the ballot page and send credentials so we know which ballot to load
+	var req = new XMLHttpRequest();
+	req.open('GET', '/voter/ballot', true);
+//	req.addEventListener('load', function() {
+//		if(req.status >=200 && req.status < 400) {
+//
+	req.send(null);
+	return approvalToken;
+}
 
-var voter = {
-    authToken: "0111US890",
-    address: "2500 Monroe Avenue, Corvallis, Oregon",
-    fName: "Rini",
-    lName: "Chatterjee"
+
+var voter = {	
+	voterID: "ID_9247547",
+    	token: "0111US890",
+   	address: "2500 Monroe Avenue, Corvallis, Oregon",
+   	fName: "Rini",
+    	lName: "Chatterjee",
+	Birthdate: "1967-04-12"	
 };
 
 var ballot = {
@@ -57,7 +79,7 @@ function login() {
         inputValues.voterCredentials[item.name] = item.value;
     }
     console.log(inputValues.voterCredentials);
-
+		console.log(approval());
 
 };
 
