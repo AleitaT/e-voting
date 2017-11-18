@@ -1,0 +1,28 @@
+//- login.pug
+
+extends ../layout.pug
+
+block contents
+	div.contents
+		h1 E-vote Login
+		form#login(method='POST' action='/login')
+			div.form-group
+				label(for='voterID') Voter ID:
+				input#id(type='id', placeholder='ID_123456' name='id')
+			div.form-group
+				label(for="fName") First name:
+				input#fName(type='text', placeholder='First Name' name='fName')
+			div.form-group
+				label(for="lName") Last name:
+				input#lName(type='text', placeholder='Last Name' name='lName')
+			div.form-group
+				label(for="Birthdate") Date of Birth
+				input#Birthdate(type='date' name='Birthdate')
+			div.form-group
+				label(for="token") Voter token:
+				input#token(type='password', placeholder='Authorization Token' name='token')
+			a(href="http://#") Forgot Your Authorization Token?
+			div.form-group
+				button#submitLogin(type='button' onclick="login()") Submit
+	script
+		include ../../src/script.js

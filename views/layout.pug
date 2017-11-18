@@ -15,7 +15,9 @@ html
   body 
     div.main
       block header
-        ul#nav-links.menu-divider
+        ul#nav-links
+          li
+            a(href='/voter/Home' class={active: title === 'Home'}) Home
           li
             a(href='/voter/About' class={active: title === 'About'}) About
           li

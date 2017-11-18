@@ -1,8 +1,10 @@
 "use strict";
 
+const express = require('express');
+
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    res.render('index', {
+    res.render('voter/login', {
       status: 200, 
       status: 'ok', 
       title: 'E-voting', 

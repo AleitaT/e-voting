@@ -1,0 +1,122 @@
+$white: #FFFFFF;
+$limegreen: #CBE86B;
+$darkgreen: #F2E9E1;
+$grey: #1C140D;
+$black: #CBE86B;
+$thisone: #CBE86B;
+$thatone: #F2E9E1;
+$font-stack:  'fira-sans', sans-serif;
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
+body {
+	background-color: #CBE86B;
+	font-family: $font-stack;
+	
+	p {
+	  font-family: 'sans-serif';
+  }
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	font-color: $black;
+}
+
+h2 {
+	font-size: 1.8em;
+	font-weight: bold;	
+}
+
+h3 {
+  font-size: 1.6em;	
+}
+
+
+div.main {
+	ul#nav-links { 
+	height: 50;
+	width: 100%;
+	background-color: $black;
+	margin: 0 0 0 0;
+	padding: 0;
+		li {	
+		  text-align: center;
+		  width: 25%;
+		  text-decoration: none;
+			display: inline-block;
+			margin: 20 0 20 0;
+			a{ 
+				text-decoration: none;
+				font-size: 1.1em;
+				color: $grey;
+			}
+		}
+	}
+}
+
+div.contents {
+	width: 80%;
+	margin: auto;
+}
+
+form#login {
+	width: 80%;
+  margin: 0 auto 0 auto;
+  
+  label {
+    text-align: left;
+    color: $white;
+  }
+  
+  input#fname, input#lname, input#birthdate, input#token {
+    width: 100%;
+    padding: 6px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+
+  input#submit {
+    width: 100%;
+    background-color: $grey;
+    color: $white !important;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+ 	}
+
+  div.form-group { 
+    margin: 10 0 10 0;
+  }
+}
+
+div#footer {
+	width: 80%;
+	font-size: .8em;
+	ul.foot-links {
+	  li {
+	    list-style: none;
+	    a {
+	      text-decoration: none;
+	    }
+	  }
+	}
+}
