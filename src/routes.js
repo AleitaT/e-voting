@@ -24,13 +24,25 @@ module.exports = function(app) {
       title: 'login', 
     });
   }); 
-  app.get("/voter/ballot", (req, res) => {
-    res.render('voter/ballot', {
-      status: 200, 
-      status: 'ok', 
-      title: 'Ballot', 
-    });
+
+  // TEST
+  app.get('/voter/ballot',function(req,res){
+    var context = {};
+    console.log(req.query);
+
+    context.sentData = req.query.myData;
+
+    res.render('voter/ballot', req.query);
   });
+
+  // app.get("/voter/ballot", (req, res) => {
+  //   res.render('voter/ballot', {
+  //     status: 200, 
+  //     status: 'ok', 
+  //     title: 'Ballot', 
+  //   });
+  // });
+
   app.get("/voter/ballot-verify", (req, res) => {
     res.render('voter/ballot-verify', {
       status: 200, 

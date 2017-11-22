@@ -1,0 +1,56 @@
+{
+    "voters": {
+              "personal": {
+                      "$auth": "5968dd23fc13ae04d9000001",
+                      "lastName": "Smith",
+                      "firstName": "Joe",
+                      "secureA": "What is your first pets name?",
+                      "secureQ": "Turtle"
+              },
+              "details": {
+                      "type": "voter",
+                      "address": 12345,
+                      "addressStreet": "South Hampton Hwy",
+                      "addressAptNum": "#4",
+                      "city": "Foster",
+                      "district": "",
+                      "region": "",
+                      "state": "Oregon",
+                      "country": "USA",
+                      "postalCode": 97345
+              },
+              "ballot": {
+                      "electionID": "OR7492004727625834",
+                      "hasVoted": 0
+              }
+      },
+
+
+      "elections": {
+              "ballot": {
+                      "bID": 23535,
+                      "electionID": "OR7492004727625834",
+                      "openingTime": "11/13/2017,0800",
+                      "closingTime": "12/15/2017,1600"
+              },
+              "offices": {
+                      "candidates": [{
+                                      "name": "Aleita Train",
+                                      "title": "mayor",
+                                      "state": "Oregon",
+                                      "district": "",
+                                      "city": "Foster",
+                                      "party": "Green Party"
+                              },
+                              {
+                                      "name": "Katie Beth",
+                                      "title": "mayor",
+                                      "state": "Oregon",
+                                      "district": "",
+                                      "city": "Foster",
+                                      "party": "Democratic Party"
+                              }
+                      ]
+              }
+      }
+}
