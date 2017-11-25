@@ -10,51 +10,35 @@ block contents
 
         div.contents
             h4 Name
-            p#voterName #{fName} #{lName}
+            p#voterName #{user.firstName} #{user.lastName}
 
             h4 Address
-            p#voterAddress
+            p#voterAddress 
 
 
             h4 Token
-            p#voterAuthToken #{token}
+            p#voterAuthToken #{user.token}
 
 
 
         form#postBallot(method='' action='')
 
-
-
             div.form-group
 
-                h3#Ofc1
+                h3#title1 Mayor
+                label#Ofc1Cnd1(for="Ofc1") 
                 input#Cnd11(type="radio" name="Ofc1" value="Ofc1Cnd1")
-                |
-                label#Ofc1Cnd1(for="Ofc1")
                 br
 
-                input#Cnd12(type="radio" name="Ofc1" value="Ofc1Cnd2")
-                |
                 label#Ofc1Cnd2(for="Ofc1")
+                input#Cnd12(type="radio" name="Ofc1" value="Ofc1Cnd2")
                 br
 
-            div.form-group
+            div.form-group#ballotInfo
 
-                h3#Ofc2
-                input#Cnd21(type="radio" name="Ofc2" value="Ofc2Cnd1")
-                |
-                label#Ofc2Cnd1(for="Ofc2")
-                br
-
-                input#Cnd22(type="radio" name="Ofc2" value="Ofc2Cnd2")
-                |
-                label#Ofc2Cnd2(for="Ofc2")
-                br
 
             div.form-group
                 button#submit(type='button' onclick="getBallot()") Submit
-
-
 
     script
         include ../../src/ballotScript.js

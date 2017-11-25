@@ -1,48 +1,66 @@
-/*
-document.getElementById("voterName").innerHTML = voter.fName + ' ' + voter.lName;
-document.getElementById("voterAddress").innerHTML = voter.address;
-document.getElementById("voterAuthToken").innerHTML = voter.authToken;
+document.addEventListener('DOMContentLoaded', getBallotInfo);
 
-document.getElementById("Ofc1").innerHTML = ballot.Ofc1;
-document.getElementById("Ofc2").innerHTML = ballot.Ofc2;
 
-document.getElementById("Ofc1Cnd1").innerHTML = ballot.Ofc1Cnd1;
-document.getElementById("Ofc1Cnd2").innerHTML = ballot.Ofc1Cnd2;
-document.getElementById("Ofc2Cnd1").innerHTML = ballot.Ofc2Cnd1;
-document.getElementById("Ofc2Cnd2").innerHTML = ballot.Ofc2Cnd2;
-*/
+let titles = {
+    positions : {},
+    count: 0
+};
 
-/*
-var req = new XMLHttpRequest();
+function getBallotInfo() {
+    var req = new XMLHttpRequest();
 
-        // call the ballot page and send credentials so we know which ballot to load
-        req.open('POST', 'voter/ballot', true);
+    // call the ballot page and send credentials so we know which ballot to load
+    req.open('GET', '/electionInfo', true);
 
-        //req.setRequestHeader('Content-Type', 'application/json');
 
-        req.addEventListener('load',function(){ 
-            if(req.status >= 200 && req.status < 400){
-                //var response = JSON.parse(req.responseText);
+    req.addEventListener('load',function(){ 
+        if(req.status >= 200 && req.status < 400){
+            let response = JSON.parse(req.responseText);
 
-                console.log("HERE");
-                //console.log("RESPONSE: " + response);
-                //var response = JSON.parse(req.responseText);
-                //var response = req.responseText;
-                //console.log(response);
+            // Information from the ballot database (db.json)
+            let candidates = response.elections.offices.candidates;
+            let numCandidates = response.elections.offices.candidates.length;
+            
+            // Used to get the correct user's address
+            let address = "";
+            let token = document.getElementById("voterAuthToken").textContent;
+            let numvoters = response.voters.length;
 
-                //var response = req;
-                //console.log(response);
-
-                //window.location = "/voter/ballot";
-
+            // Get the address of the user
+            for (let i = 0; i < numvoters; i++) {
+                if (response.voters[i].personal.token = token) {
+                    address = response.voters[i].details.address + " ";
+                    address += response.voters[i].details.addressStreet + ", ";
+                    if (response.voters[i].details.addressAptNum != "")
+                        address += "#" + response.voters[i].details.addressAptNum + " ";
+                    address += response.voters[i].details.city + ", ";
+                    address += response.voters[i].details.state + ", ";
+                    address += response.voters[i].details.postalCode;
+                }
             }
-            else {
-                console.log("Error in network request: " + req.statusText);
-        }});
 
-        console.log(JSON.stringify(payload));
-        console.log(payload);
+            addAdress = document.getElementById("voterAddress");
+            addAdress.textContent = address;
 
-        req.send(payload);
-        event.preventDefault();
-*/
+            // Somehow add info into the page
+            createBallot(candidates, numCandidates);
+
+
+        }
+        else {
+            console.log("Error in network request: " + req.statusText);
+    }});
+
+    req.send(null);
+}
+
+// I was going to use DOM manipulation to add information into the ballot page
+function createBallot(candidates, length){
+    let ballot = document.getElementById("ballotInfo");
+
+    let newDiv = document.createElement("div");
+
+    let newHeader = document.createElement("h3");
+
+    let newLabel = document.createElement("label");
+}
