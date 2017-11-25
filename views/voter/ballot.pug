@@ -10,13 +10,14 @@ block contents
 
         div.contents
             h4 Name
-            p#voterName
+            p#voterName #{fName} #{lName}
 
             h4 Address
             p#voterAddress
 
+
             h4 Token
-            p#voterAuthToken
+            p#voterAuthToken #{token}
 
 
 
@@ -56,4 +57,4 @@ block contents
 
 
     script
-        include ../../src/script.js
+        include ../../src/ballotScript.js

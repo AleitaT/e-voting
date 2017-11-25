@@ -26,13 +26,25 @@ module.exports = function(app) {
   }); 
 
   // TEST
-  app.get('/voter/ballot',function(req,res){
-    var context = {};
-    console.log(req.query);
+  app.post('/voter/ballot',function(req,res){
+    
+    let inserts = [req.body.id, req.body.fName, req.body.lName, req.body.bDay, req.body.token, req.body.address];
+    
+    let context = [{
+        id: req.body.id,
+        fName: req.body.fName, 
+        lName: req.body.lName, 
+        bDay: req.body.Birthdate, 
+        token: req.body.token 
+    }];
 
-    context.sentData = req.query.myData;
+    console.log("DATA: " + req.query.myData);
+    console.log("QUERY: " + req.query);
+    console.log("RESULT: " + req.result);
+    console.log("INSERTS: " + req.body.id);
+    console.log("INSERTS: " + JSON.stringify(context));
 
-    res.render('voter/ballot', req.query);
+    res.render('voter/ballot', context[0]);
   });
 
   // app.get("/voter/ballot", (req, res) => {
