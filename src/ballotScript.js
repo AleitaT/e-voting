@@ -7,7 +7,6 @@ function getBallotInfo() {
     // call the ballot page and send credentials so we know which ballot to load
     req.open('GET', '/electionInfo', true);
 
-
     req.addEventListener('load',function(){ 
         if(req.status >= 200 && req.status < 400){
             let response = JSON.parse(req.responseText);

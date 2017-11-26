@@ -78,7 +78,8 @@
 			"position": "Mayor",
 			"candidates": [
 				{
-					"name": "Aleita Train",
+					"firstName": "Aleita",
+					"lastName": "Train",
 					"title": "mayor",
 					"state": "Oregon",
 					"district": "",
@@ -86,7 +87,8 @@
 					"party": "Green Party"
 				},
 				{
-					"name": "Katie Beth",
+					"firstName": "Katie",
+					"lastName": "Beth",
 					"title": "mayor",
 					"state": "Oregon",
 					"district": "",
@@ -99,7 +101,8 @@
 			"position": "Counsellor",
 			"candidates": [
 				{
-					"name": "Matt Castillo",
+					"firstName": "Matt",
+					"lastName": "Castillo",
 					"title": "Counsellor",
 					"state": "Oregon",
 					"district": "",
@@ -107,7 +110,8 @@
 					"party": "Communist Party"
 				},
 				{
-					"name": "Sean Solberg",
+					"firstName": "Sean",
+					"lastName": "Solberg",
 					"title": "Counsellor",
 					"state": "Oregon",
 					"district": "",

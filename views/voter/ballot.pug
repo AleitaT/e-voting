@@ -25,8 +25,8 @@ block contents
                     div.form-group
                         h3 #{item.position}
                         for candidate, i in item.candidates
-                            label(for="#{item.position}") #{candidate.name}
-                            input(type="radio" name#{item.position} value="#{candidate}#{i}")
+                            label(for=item.position) #{candidate.firstName} #{candidate.lastName}
+                            input(type="radio" name=item.position value=item.position+i)
                             br
                 br
                 div.form-group
