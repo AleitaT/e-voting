@@ -1,8 +1,5 @@
 
-.PHONY: build start
+.PHONY: build
 
-start: build
-    node server.js
-
-build
-    ./node_modules/.bin/sass public/stylesheets.scss > /public/stylesheets.css
+build: 
+		./node_modules/.bin/sass public/stylesheets/style.scss > public/stylesheets/style.css
