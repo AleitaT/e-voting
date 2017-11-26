@@ -2,49 +2,35 @@
 
 extends ../layout.pug
 
-
 block contents
     div.contents
         h1 E-Vote
         h2 Your voter credentials:
         div.voter
             h4 Name
-            p#voterName
+            p#voterName #{user.firstName} #{user.lastName}
 
             h4 Address
-            p#voterAddress
+            p#voterAddress 
 
             h4 Token
-            p#voterAuthToken
+            p#voterAuthToken #{user.token}
+        
+        br
 
         form#postBallot(method='' action='')
-
-            div.form-group
-
-                h3#Ofc1
-                input#Cnd11(type="radio" name="Ofc1" value="Ofc1Cnd1")
-                label#Ofc1Cnd1(for="Ofc1")
+            div.col-sm-8#ballotContent
+                       
+                for item in elections.offices
+                    div.form-group
+                        h3 #{item.position}
+                        for candidate, i in item.candidates
+                            label(for="#{item.position}") #{candidate.name}
+                            input(type="radio" name#{item.position} value="#{candidate}#{i}")
+                            br
                 br
-
-                input#Cnd12(type="radio" name="Ofc1" value="Ofc1Cnd2")
-                label#Ofc1Cnd2(for="Ofc1")
-                br
-
-            div.form-group
-
-                h3#Ofc2
-                input#Cnd21(type="radio" name="Ofc2" value="Ofc2Cnd1")
-                label#Ofc2Cnd1(for="Ofc2")
-                br
-
-                input#Cnd22(type="radio" name="Ofc2" value="Ofc2Cnd2")
-                label#Ofc2Cnd2(for="Ofc2")
-                br
-
-            div.form-group
-                button#submit(type='button' onclick="getBallot()") Submit
-
-
+                div.form-group
+                    button#submit(type='button' onclick="getBallot()") Submit
 
     script
-        include ../../src/script.js
+        include ../../src/ballotScript.js

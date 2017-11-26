@@ -1,6 +1,9 @@
 var express = require('express');
 const app = module.exports = express();
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended:true}));
+
 app.disable('x-powered-by');
 
 app.set('views', './views');
