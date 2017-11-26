@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', getBallotInfo);
 
-
-let titles = {
-    positions : {},
-    count: 0
-};
-
+// Get information from the ballot to display the user's a
 function getBallotInfo() {
     var req = new XMLHttpRequest();
 
@@ -17,9 +12,7 @@ function getBallotInfo() {
         if(req.status >= 200 && req.status < 400){
             let response = JSON.parse(req.responseText);
 
-            // Information from the ballot database (db.json)
-            let candidates = response.elections.offices.candidates;
-            let numCandidates = response.elections.offices.candidates.length;
+            console.log(response);
             
             // Used to get the correct user's address
             let address = "";
@@ -39,12 +32,8 @@ function getBallotInfo() {
                 }
             }
 
-            addAdress = document.getElementById("voterAddress");
-            addAdress.textContent = address;
-
-            // Somehow add info into the page
-            createBallot(candidates, numCandidates);
-
+            let addAddress = document.getElementById("voterAddress");
+            addAddress.textContent = address;
 
         }
         else {
@@ -54,13 +43,3 @@ function getBallotInfo() {
     req.send(null);
 }
 
-// I was going to use DOM manipulation to add information into the ballot page
-function createBallot(candidates, length){
-    let ballot = document.getElementById("ballotInfo");
-
-    let newDiv = document.createElement("div");
-
-    let newHeader = document.createElement("h3");
-
-    let newLabel = document.createElement("label");
-}

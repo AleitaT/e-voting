@@ -74,42 +74,48 @@
 			"closingTime": "12/15/2017,1600"
 		},
 		"offices": 
-		{
+		[{	
+			"position": "Mayor",
 			"candidates": [
-			{
-				"name": "Aleita Train",
-				"title": "mayor",
-				"state": "Oregon",
-				"district": "",
-				"city": "Foster",
-				"party": "Green Party"
-			},
-			{
-				"name": "Katie Beth",
-				"title": "mayor",
-				"state": "Oregon",
-				"district": "",
-				"city": "Foster",
-				"party": "Democratic Party"
-			},
-			{
-				"name": "Matt Castillo",
-				"title": "Counsellor",
-				"state": "Oregon",
-				"district": "",
-				"city": "Foster",
-				"party": "Communist Party"
-			},
-			{
-				"name": "Sean Solberg",
-				"title": "Counsellor",
-				"state": "Oregon",
-				"district": "",
-				"city": "Foster",
-				"party": "Socialist Party"
-			}
+				{
+					"name": "Aleita Train",
+					"title": "mayor",
+					"state": "Oregon",
+					"district": "",
+					"city": "Foster",
+					"party": "Green Party"
+				},
+				{
+					"name": "Katie Beth",
+					"title": "mayor",
+					"state": "Oregon",
+					"district": "",
+					"city": "Foster",
+					"party": "Democratic Party"
+				}
 			]
-		}
+		},
+		{ 
+			"position": "Counsellor",
+			"candidates": [
+				{
+					"name": "Matt Castillo",
+					"title": "Counsellor",
+					"state": "Oregon",
+					"district": "",
+					"city": "Foster",
+					"party": "Communist Party"
+				},
+				{
+					"name": "Sean Solberg",
+					"title": "Counsellor",
+					"state": "Oregon",
+					"district": "",
+					"city": "Foster",
+					"party": "Socialist Party"
+				}
+			]
+		}]
 	}
 }
 
