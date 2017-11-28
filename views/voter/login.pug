@@ -5,7 +5,7 @@ extends ../layout.pug
 block contents
 	div.contents
 		h1 E-vote Login
-		form#login(onsubmit="return login()" method='POST' action='voter/ballot')
+		form#login(onsubmit="login()" method='POST' action='voter/ballot' )
 			div.form-group
 				label(for='voterID') Voter ID:
 				input#id(type='id', placeholder='ID_123456' name='id' required)

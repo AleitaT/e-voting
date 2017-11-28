@@ -9,7 +9,6 @@
 	},
 	"voters": [
 	{
-		"personal": {
 			"id": "ID_9247555",
 			"$auth": "5968dd23fc13ae04d9000001",
 			"lastName": "Smith",
@@ -17,9 +16,7 @@
 			"secureA": "What is your first pets name?",
 			"secureQ": "Turtle",
 			"DOB": "1970-05-12",
-			"token": "0222US890"
-		},
-		"details": {
+			"token": "0222US890",
 			"type": "voter",
 			"address": 12345,
 			"addressStreet": "South Hampton Hwy",
@@ -29,15 +26,11 @@
 			"region": "",
 			"state": "Oregon",
 			"country": "USA",
-			"postalCode": 97345
-			},
-		"ballot": {
+			"postalCode": 97345,
 			"electionID": "OR7492004727625834",
 			"hasVoted": 0
-		}
 	},
 	{
-		"personal": {
 			"id": "ID_9247547",
 			"$auth": "6985dd23fc13ae04d9000001",
 			"lastName": "Chatterjee",
@@ -45,9 +38,7 @@
 			"secureA": "What is your first pets name?",
 			"secureQ": "Dog",
 			"DOB": "1967-04-12",
-			"token": "0111US890"
-		},
-		"details": {
+			"token": "0111US890",
 			"type": "voter",
 			"address": 2500,
 			"addressStreet": "Monroe Avenue",
@@ -57,12 +48,10 @@
 			"region": "",
 			"state": "Oregon",
 			"country": "USA",
-			"postalCode": 97345
-		},
-		"ballot": {
+			"postalCode": 97345,
 			"electionID": "OR7492004727625834",
 			"hasVoted": 0
-		}
+		
 		}	
 	],
 		
