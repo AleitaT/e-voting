@@ -1,0 +1,23 @@
+//- tou.pug
+
+extends ../layout.pug
+
+block contents
+	div.contents 
+		form#terms(method='get' action='login') 
+			div.form-group
+				p 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus accumsan leo. Sed molestie interdum leo, non volutpat ante. Nullam porttitor, nisl quis luctus eleifend, magna tellus venenatis sem, quis posuere orci dui sed purus. Duis ac turpis sapien. In et risus eget nisi posuere euismod eget sed odio. Suspendisse hendrerit ut risus nec sodales. Donec quam turpis, imperdiet eget sem dictum, euismod mollis orci. Nulla sodales velit ut volutpat fringilla. In hac habitasse platea dictumst. Cras non nulla eu ante suscipit aliquam. Integer venenatis urna vel lectus tempus, in imperdiet ex dignissim. Mauris at ex mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam id ultricies augue. Etiam cursus odio volutpat, commodo magna pulvinar, elementum nisi.
+
+				p 	Nam porttitor, dolor ac varius tempor, ligula dui accumsan elit, sed mattis massa ipsum at massa. Praesent laoreet maximus odio ac bibendum. Proin non vestibulum elit. Mauris faucibus tincidunt nibh quis fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque auctor sollicitudin libero non imperdiet. Duis sed dapibus turpis. Aenean fermentum eu libero quis porttitor. Donec mi magna, pretium id risus a, mattis elementum odio. In quis mauris at nisl fermentum blandit scelerisque vitae nibh.
+
+				p 	Duis maximus massa id nibh semper sollicitudin. Curabitur sem urna, pulvinar quis mi sed, egestas faucibus mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In feugiat aliquet vestibulum. Donec id ultrices urna, quis rhoncus tellus. Quisque lorem libero, semper quis magna porttitor, fringilla porttitor nulla. Etiam blandit sapien id lectus laoreet facilisis. Vivamus sed elementum lectus, eu consectetur velit. Nunc consequat justo in odio faucibus, ac molestie sapien pulvinar. Donec lobortis elit rhoncus nunc pulvinar lobortis. Proin pharetra accumsan ante in ullamcorper.
+				p 	Proin aliquet tincidunt lectus, non vestibulum nisi gravida non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus bibendum molestie auctor. Aenean venenatis diam eget pulvinar scelerisque. Donec mauris urna, tempus tincidunt viverra at, fermentum at leo. Morbi quis maximus risus, in fermentum ex. Donec dictum mauris in arcu ultricies blandit. Nunc mauris ex, lobortis eu ipsum id, elementum suscipit sem. Nullam finibus felis quis tellus sodales egestas. Pellentesque et ullamcorper sem, eget feugiat nibh.
+
+				p 	Etiam massa diam, congue ac laoreet et, hendrerit at ligula. Quisque aliquet lectus vitae ligula interdum, nec sagittis ipsum interdum. Nulla cursus accumsan imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed felis risus, ultricies a dapibus luctus, blandit nec quam. Etiam vitae tincidunt est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque arcu ut leo varius malesuada. Vestibulum id pulvinar purus. Pellentesque ultricies ex ut ligula pulvinar fermentum. Etiam ligula nibh, euismod sed dapibus condimentum, finibus sed velit.
+
+	
+			div.form-group
+				label(for='termsAgree') By clicking here you agree to the terms and conditions above.
+				input#termsAgree(type='radio', name='termsAgree' required)
+			div.form-group
+				button#submit(type='submit' value='submit') Submit
