@@ -17,6 +17,8 @@ If any depencies do not install upon running npm install please edit the package
 
 # Building and deploying the program
 
+Note: you must have run the services set up instruction before attempting to build. The program will not execute without downloading the appropriate node module. 
+
 ## Build
 
 We use sass to produce our CSS templates. Run the following command to compile your sass files. 
