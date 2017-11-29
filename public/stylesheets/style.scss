@@ -7,7 +7,6 @@ $font-stack:  'fira-sans', sans-serif;
 
 html, body {
 	width: 100%;
-	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	overflow-x: hidden;
@@ -19,7 +18,8 @@ body {
 	
 	p {
 		color: $black;
-	  font-family: 'sans-serif';
+		font-size: .8em;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   }
 }
 
@@ -27,6 +27,7 @@ h1 {
 	font-size: 2em;
 	font-weight: bold;
 	font-color: $black;
+	text-align:center;
 }
 
 h2 {
@@ -67,10 +68,51 @@ div.contents {
 	margin: 10 auto 0 auto;
 	background-color: $lightBeige;
 	color: $black;
-	border: solid $black .5px;
 	padding: 10;
+	border-radius:2em;
 	min-height: 100%;
 	position:relative;
+}
+
+/******* HOME PAGE *********/
+
+div.index-contents{
+	border-radius:2em;
+	width: 65%;
+	margin: 20 auto 0 auto;
+	background-color: $lightBeige;
+	color: $black;
+	padding: 20;
+	height: 100%;
+	position:relative;
+
+	h1 {
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		text-align:center;
+		font-size: 1.6em;
+	}
+
+	h2 {
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-size: 1.1em;
+	}
+	h3 {
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-size: 1.1em;
+		font-style: normal;
+		font-weight: 200;
+	}
+	p {
+		font-weight: 100;
+		font-size: .9em;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	}
+
+	ul {
+		li {
+			font-size: .9em;
+		}
+	}
 }
 
 /******* LOGIN PAGE ********/
@@ -79,7 +121,7 @@ form#login {
 	width: 80%;
   margin: 0 auto 0 auto;
   background-color: $white;
-  border: solid $black .5px;
+  border-radius: 5px;
   padding: 10;
   
   label {
@@ -92,7 +134,7 @@ form#login {
     padding: 6px 20px;
     margin: 6px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: .5px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 
@@ -109,9 +151,9 @@ form#login {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.2em;
  	}
 
   div.form-group { 
@@ -127,7 +169,6 @@ div.voter {
 	background-color: $white;
 	padding: 10;
 	margin: 10 0 10 0;
-	border: solid $black .5px;
 	border-radius: 5px;
 
 }

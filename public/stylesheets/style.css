@@ -1,6 +1,5 @@
 html, body {
   width: 100%;
-  height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
@@ -12,13 +11,15 @@ body {
 }
 body p {
   color: #1C140D;
-  font-family: "sans-serif";
+  font-size: 0.8em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 h1 {
   font-size: 2em;
   font-weight: bold;
   font-color: #1C140D;
+  text-align: center;
 }
 
 h2 {
@@ -56,10 +57,45 @@ div.contents {
   margin: 10 auto 0 auto;
   background-color: #F2E9E1;
   color: #1C140D;
-  border: solid #1C140D 0.5px;
   padding: 10;
+  border-radius: 2em;
   min-height: 100%;
   position: relative;
+}
+
+/******* HOME PAGE *********/
+div.index-contents {
+  border-radius: 2em;
+  width: 65%;
+  margin: 20 auto 0 auto;
+  background-color: #F2E9E1;
+  color: #1C140D;
+  padding: 20;
+  height: 100%;
+  position: relative;
+}
+div.index-contents h1 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.6em;
+}
+div.index-contents h2 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.1em;
+}
+div.index-contents h3 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 200;
+}
+div.index-contents p {
+  font-weight: 100;
+  font-size: 0.9em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+div.index-contents ul li {
+  font-size: 0.9em;
 }
 
 /******* LOGIN PAGE ********/
@@ -67,7 +103,7 @@ form#login {
   width: 80%;
   margin: 0 auto 0 auto;
   background-color: #FFFFFF;
-  border: solid #1C140D 0.5px;
+  border-radius: 5px;
   padding: 10;
 }
 form#login label {
@@ -79,7 +115,7 @@ form#login input#fname, form#login input#lname, form#login input#birthdate, form
   padding: 6px 20px;
   margin: 6px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -94,20 +130,20 @@ form#login button#submitLogin {
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 form#login div.form-group {
   margin: 10 0 10 0;
 }
+
 /****** END LOGIN PAGE *******/
 /*********** BEGIN BALLOT PAGE **********/
 div.voter {
   background-color: #FFFFFF;
   padding: 10;
   margin: 10 0 10 0;
-  border: solid #1C140D 0.5px;
   border-radius: 5px;
 }
 
