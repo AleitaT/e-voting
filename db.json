@@ -56,127 +56,127 @@
 	],
 		
 "elections": {
- +		"ballot": [{
- +			"bID": 23535,
- +			"electionID": "OR7492004727625834",
- +			"openingTime": "11/13/2017,0800",
- +			"closingTime": "12/15/2017,1600",
- +			"offices": 
- +			[{	
- +				"position": "Mayor",
- +				"candidates": [
- +					{
- +						"fname": "Aleita",
- +						"lname": "Train",
- +						"title": "mayor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Green Party"
- +					},
- +					{
- +						"fname": "Katie",
- +						"lname": "Beth",
- +						"title": "mayor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Democratic Party"
- +					}
- +				]
- +			},
- +			{ 
- +				"position": "Counsellor",
- +				"candidates": [
- +					{
- +						"fname": "Matt",
- +						"lname": "Castillo",
- +						"title": "Counsellor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Communist Party"
- +					},
- +					{
- +						"fname": "Sean",
- +						"lname": "Solberg",
- +						"title": "Counsellor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Socialist Party"
- +					}
- +				]
- +			}]
- +		},
- +		{
- +			"bID": 23536,
- +			"electionID": "OR7492004727625835",
- +			"openingTime": "11/13/2016,0800",
- +			"closingTime": "12/15/2016,1600",
- +			"offices": 
- +			[{	
- +				"position": "Mayor",
- +				"candidates": [
- +					{
- +						"fname": "Aleita",
- +						"lname": "Train",
- +						"title": "mayor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Green Party"
- +					},
- +					{
- +						"fname": "Jim",
- +						"lname": "Johnson",
- +						"title": "mayor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Democratic Party"
- +					}
- +				]
- +			},
- +			{ 
- +				"position": "Counsellor",
- +				"candidates": [
- +					{
- +						"fname": "Bob",
- +						"lname": "Bobson",
- +						"title": "Counsellor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Communist Party"
- +					},
- +					{
- +						"fname": "Nick",
- +						"lname": "Nickson",
- +						"title": "Counsellor",
- +						"state": "Oregon",
- +						"district": "",
- +						"city": "Foster",
- +						"party": "Socialist Party"
- +					}
- +				]
- +			}],
- +			"propositions":
- +			[
- +				{
- +					"city": "Foster",
- +					"state": "Oregon", 
- +					"description": "Issue new bonds to repair school"
- +				},
- +				{
- +					"city": "Foster",
- +					"state": "Oregon",
- +					"description": "Add 10 cent fee for plastic bags" 
- +				}
- +			]
- +
- +		}
- +		]
- +	}
- +}
- +
+ 		"ballot": [{
+ 			"bID": 23535,
+ 			"electionID": "OR7492004727625834",
+ 			"openingTime": "11/13/2017,0800",
+ 			"closingTime": "12/15/2017,1600",
+ 			"offices": 
+ 			[{	
+ 				"position": "Mayor",
+ 				"candidates": [
+ 					{
+ 						"fname": "Aleita",
+ 						"lname": "Train",
+ 						"title": "mayor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Green Party"
+ 					},
+ 					{
+ 						"fname": "Katie",
+ 						"lname": "Beth",
+ 						"title": "mayor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Democratic Party"
+ 					}
+ 				]
+ 			},
+ 			{ 
+ 				"position": "Counsellor",
+ 				"candidates": [
+ 					{
+ 						"fname": "Matt",
+ 						"lname": "Castillo",
+ 						"title": "Counsellor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Communist Party"
+ 					},
+ 					{
+ 						"fname": "Sean",
+ 						"lname": "Solberg",
+ 						"title": "Counsellor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Socialist Party"
+ 					}
+ 				]
+ 			}]
+ 		},
+ 		{
+ 			"bID": 23536,
+ 			"electionID": "OR7492004727625835",
+ 			"openingTime": "11/13/2016,0800",
+ 			"closingTime": "12/15/2016,1600",
+ 			"offices": 
+ 			[{	
+ 				"position": "Mayor",
+ 				"candidates": [
+ 					{
+ 						"fname": "Aleita",
+ 						"lname": "Train",
+ 						"title": "mayor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Green Party"
+ 					},
+ 					{
+ 						"fname": "Jim",
+ 						"lname": "Johnson",
+ 						"title": "mayor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Democratic Party"
+ 					}
+ 				]
+ 			},
+ 			{ 
+ 				"position": "Counsellor",
+ 				"candidates": [
+ 					{
+ 						"fname": "Bob",
+ 						"lname": "Bobson",
+ 						"title": "Counsellor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Communist Party"
+ 					},
+ 					{
+ 						"fname": "Nick",
+ 						"lname": "Nickson",
+ 						"title": "Counsellor",
+ 						"state": "Oregon",
+ 						"district": "",
+ 						"city": "Foster",
+ 						"party": "Socialist Party"
+ 					}
+ 				]
+ 			}],
+ 			"propositions":
+ 			[
+ 				{
+ 					"city": "Foster",
+ 					"state": "Oregon", 
+ 					"description": "Issue new bonds to repair school"
+ 				},
+ 				{
+ 					"city": "Foster",
+ 					"state": "Oregon",
+ 					"description": "Add 10 cent fee for plastic bags" 
+ 				}
+ 			]
+ 
+ 		}
+ 		]
+ 	}
+ }
+ 
