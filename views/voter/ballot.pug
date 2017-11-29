@@ -8,14 +8,14 @@ block contents
         h2 Your voter credentials:
         div.voter
             h4 Name
-            p#voterName #{user.firstName} #{user.lastName}
+            p#voterName #{firstName} #{lastName}
 
             h4 Address
-            p#voterAddress 
+            p#voterAddress #{addressStreet}
 
             h4 Token
-            p#voterAuthToken #{user.token}
-        
+            p#voterAuthToken #{token}
+
         br
 
         div#userVoted
@@ -24,6 +24,7 @@ block contents
 
         form#postBallot(method='' action='')
             div.col-sm-8#ballotContent
+<<<<<<< HEAD
                        
                 for item in elections.offices
                     div.form-group
@@ -32,6 +33,16 @@ block contents
                             label(for=item.position) #{candidate.firstName} #{candidate.lastName}
                             input(type="radio" name=item.position value=item.position+i)
                             br
+=======
+
+              //  for item in elections.offices
+              //      div.form-group
+              //          h3 #{item.position}
+              //          for candidate, i in item.candidates
+              //              label(for="#{item.position}") #{candidate.name}
+              //              input(type="radio" name#{item.position} value="#{candidate}#{i}")
+              //              br
+>>>>>>> development
                 br
                 div.form-group
                     button#submit(type='button' onclick="getBallot()") Submit
