@@ -6,12 +6,12 @@ let obj = require("../db.json");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    res.render('voter/login', {
+    res.render('index', {
       status: 200, 
       status: 'ok', 
       title: 'E-voting', 
     });
-  });
+  });  
   app.get("/voter/tou", (req, res) => {
     res.render('voter/tou', {
       status: 200, 
@@ -19,6 +19,13 @@ module.exports = function(app) {
       title: 'Terms of Use', 
     });
   });
+  app.get("/voter/login", (req, res) => {
+    res.render('voter/login', {
+      status: 200, 
+      status: 'ok', 
+      title: 'E-voting', 
+    });
+  });  
   app.get("/voter/login", (req, res) => {
     res.render('voter/login', {
       status: 200, 
