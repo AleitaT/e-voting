@@ -3,6 +3,22 @@
 extends layout.pug
 
 block contents
-  div.contents
-    p.medium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac sem lorem. Nullam quam odio, mattis sit amet mi at, mollis tempus diam. Aliquam elementum diam vel ullamcorper laoreet. Suspendisse felis sem, imperdiet at volutpat non, cursus at felis. Nunc vel sapien mollis, accumsan orci sed, accumsan nunc. Aenean elementum consectetur diam vitae porttitor. Morbi ut semper odio.
+	div.contents 
+		h1 Welcome!
 
+		h2 This application replaces standard paper ballot voting processes.  
+
+		p Please have prepared the following personal details, without them, you will not be able to access your ballot or submit your vote digitally. 
+
+		ul 
+			li Voter Token
+			li Voter authorization token (provided by your local government)
+			li Full name of registered voter
+			li Date of birth
+
+		h3 Ready to vote? 
+
+		form(method="get" action="/voter/tou")
+			button#submit(type='submit' value='submit') access your e-ballot
+
+		p Notice: This prototype was created as a project for OSU ONLINE CS 361 with participating group members Katie, Alieta, Souti, Matt, and Sean.

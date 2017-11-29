@@ -4,7 +4,7 @@ extends ../layout.pug
 
 block contents
 	div.contents 
-		form#terms(onsubmit="return login()" method='POST' action='voter/ballot') 
+		form#terms(method='get' action='login') 
 			div.form-group
 				p 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus accumsan leo. Sed molestie interdum leo, non volutpat ante. Nullam porttitor, nisl quis luctus eleifend, magna tellus venenatis sem, quis posuere orci dui sed purus. Duis ac turpis sapien. In et risus eget nisi posuere euismod eget sed odio. Suspendisse hendrerit ut risus nec sodales. Donec quam turpis, imperdiet eget sem dictum, euismod mollis orci. Nulla sodales velit ut volutpat fringilla. In hac habitasse platea dictumst. Cras non nulla eu ante suscipit aliquam. Integer venenatis urna vel lectus tempus, in imperdiet ex dignissim. Mauris at ex mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam id ultricies augue. Etiam cursus odio volutpat, commodo magna pulvinar, elementum nisi.
 
@@ -16,8 +16,8 @@ block contents
 				p 	Etiam massa diam, congue ac laoreet et, hendrerit at ligula. Quisque aliquet lectus vitae ligula interdum, nec sagittis ipsum interdum. Nulla cursus accumsan imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed felis risus, ultricies a dapibus luctus, blandit nec quam. Etiam vitae tincidunt est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque arcu ut leo varius malesuada. Vestibulum id pulvinar purus. Pellentesque ultricies ex ut ligula pulvinar fermentum. Etiam ligula nibh, euismod sed dapibus condimentum, finibus sed velit.
 
 	
-		div.form-group
+			div.form-group
 				label(for='termsAgree') Click the box to verify you agree to the terms and conditions laid out above.
 				input#termsAgree(type='radio', name='termsAgree' required)
-		div.form-group
-				button#submitTerns(type='submit' value='submit') Submit
+			div.form-group
+				button#submit(type='submit' value='submit') Submit
