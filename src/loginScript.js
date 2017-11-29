@@ -67,15 +67,11 @@ var approval = function() {
 
 function login() {
 
-<<<<<<< HEAD
-        let validatedForm = false; 
-=======
         var validatedForm = true;
         
         var callbackCount = 0;
         // Manually enter test data correctInfo or incorrectInfo
         //correctInfo();
->>>>>>> development
 
         // Get elements entered by user
         var x = document.getElementById("login").elements;
