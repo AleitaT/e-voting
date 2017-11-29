@@ -1,0 +1,13 @@
+//- unf.pug
+
+extends ../layout.pug
+
+block contents
+	div.contents 
+		form#terms( action='/voter/login') 
+			div.form-group
+				p 	Login credentials not found.  Please try again. 
+
+
+			div.form-group
+				button#submit(type='submit' value='submit') Return
