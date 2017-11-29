@@ -30,6 +30,9 @@ function incorrectInfo() {
     document.getElementById("token").value = "011111111";
 }
 
+// Manually enter test data correctInfo or incorrectInfo
+correctInfo();
+
 // Function that returns an alert to user that the info is not correct
 var notApproved = function() {
     alert("Info does not match");  
@@ -56,10 +59,6 @@ var approval = function() {
 function login() {
 
         let validatedForm = false; 
-        
-        var callbackCount = 0;
-        // Manually enter test data correctInfo or incorrectInfo
-        //correctInfo();
 
         // Get elements entered by user
         var x = document.getElementById("login").elements;

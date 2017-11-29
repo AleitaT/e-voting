@@ -1,6 +1,7 @@
 "use strict";
 
 const express = require('express');
+var fs = require('fs');
 let obj = require("../db.json");
 
 module.exports = function(app) {
@@ -50,7 +51,7 @@ module.exports = function(app) {
     console.log("INSERTS: " + JSON.stringify(obj));
     */
 
-    console.log("INSERTS: " + JSON.stringify(obj));
+    //console.log("INSERTS: " + JSON.stringify(obj));
 
     res.render('voter/ballot', obj);
   });
@@ -62,6 +63,39 @@ module.exports = function(app) {
   //     title: 'Ballot', 
   //   });
   // });
+
+  app.get('/hasVoted', function(req,res){ 
+    let numVoters = obj.voters.length;
+    let position = 0;
+
+    let jsonFileObject = JSON.parse(fs.readFileSync('db.json')); 
+    //console.log(jsonFileObject);
+
+    for (let i = 0; i < numVoters; i++) {
+      if (jsonFileObject.voters[i].personal.token == req.query.token){
+        jsonFileObject.voters[i].ballot.hasVoted = req.query.voted; 
+        position = i; 
+        //console.log("HERE: " + obj.voters[i].ballot.hasVoted);
+      }
+    }
+
+    console.log(jsonFileObject);
+    //fs.writeFileSync('db.json', jsonFileObject); 
+
+    /*
+    for (var dataIndex in jsonFileObject.result.data) {
+      if (jsonFileObject.result.data[dataIndex].feedId === feedId) {
+         jsonFileObject.result.data[dataIndex].region = updatedRegion;
+      }
+   }
+*/
+   // console.log("THIS: " + JSON.stringify(obj.voters[position].ballot));
+   
+   // console.log("QUERY: " + req.query.voted);
+   // console.log("INSERTS: " + req.query.token);
+
+    res.render('voter/ballot', obj);
+  });
 
   app.get("/voter/ballot-verify", (req, res) => {
     res.render('voter/ballot-verify', {
