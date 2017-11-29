@@ -3,26 +3,26 @@
 extends ../layout.pug
 
 block contents
-	div.contents
-		h1 E-vote Login
-		form#login(onsubmit="login()" method='POST' action='voter/ballot' )
-			div.form-group
-				label(for='voterID') Voter ID:
-				input#id(type='id', placeholder='ID_123456' name='id' required)
-			div.form-group
-				label(for="fName") First name:
-				input#fName(type='text', placeholder='First Name' name='fName' required)
-			div.form-group
-				label(for="lName") Last name:
-				input#lName(type='text', placeholder='Last Name' name='lName' required)
-			div.form-group
-				label(for="Birthdate") Date of Birth
-				input#Birthdate(type='date' name='Birthdate' required) 
-			div.form-group
-				label(for="token") Voter token:
-				input#token(type='password', placeholder='Authorization Token' name='token' required)
-			a(href="http://#") Forgot Your Authorization Token?
-			div.form-group
-				button#submitLogin(type='submit' value="Submit") Submit
-	script
-		include ../../src/loginScript.js
+        div.contents
+                h1 E-vote Login
+                form#login(method='POST' action='voterVerify' )
+                        div.form-group
+                                label(for='voterID') Voter ID:
+                                input#id(type='id', placeholder='ID_123456' name='id' required)
+                        div.form-group
+                                label(for="fName") First name:
+                                input#fName(type='text', placeholder='First Name' name='fName' required)
+                        div.form-group
+                                label(for="lName") Last name:
+                                input#lName(type='text', placeholder='Last Name' name='lName' required)
+                        div.form-group
+                                label(for="Birthdate") Date of Birth
+                                input#Birthdate(type='date' name='Birthdate' required)
+                        div.form-group
+                                label(for="token") Voter token:
+                                input#token(type='password', placeholder='Authorization Token' name='token' required)
+                        a(href="http://#") Forgot Your Authorization Token?
+                        div.form-group
+                                button#submitLogin(type='submit' onsubmit="login()" value="Submit") Submit
+        script
+                include ../../src/loginScript.js

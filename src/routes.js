@@ -33,8 +33,8 @@ module.exports = function(app) {
     // TEST
     app.post('/voterVerify',function(req,res){
 
-        //let inserts = [req.body.id, req.body.fName, req.body.lName, req.body.bDay, req.body.token, req.body.address];
-
+        let inserts = [req.body.id, req.body.fName, req.body.lName, req.body.bDay, req.body.token, req.body.address];
+        console.log(req.body);
         obj.user.voterID = req.body.id;
         obj.user.firstName = req.body.fName;
         obj.user.lastName = req.body.lName;
@@ -42,24 +42,45 @@ module.exports = function(app) {
         obj.user.token = req.body.token;
 
         var i;
+        var foundVoter = 0;
+        var corrVoter;
         for(i=0; i<obj.voters.length; i++){
+            console.log("i is ", i);
+            console.log("voter ID from db is ", obj.voters[i].id);
             if(obj.user.voterID == obj.voters[i].id)
-                //console.log("obj.user.voterID: ", obj.user.voterID, " = obj.voters[", i, "]id: ", obj.voters[i].id);
+            {
+                corrVoter = i;
+                foundVoter = 1;
+                console.log("corr voter is ", corrVoter);
                 break;
+            }
         }
-        if(obj.user.firstName == obj.voters[i].firstName && obj.user.lastName == obj.voters[i].lastName && obj.user.DOB == obj.voters[i].DOB && obj.user.token == obj.voters[i].token) {
-           //console.log(JSON.stringify(obj.voters[i]));
-           res.status(200);
-           res.render('voter/ballot', JSON.stringify(obj.voters[i]));
+        console.log("found voter is ", foundVoter);
+
+        if(foundVoter==1){
+            if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
+                res.status(200);
+
+                //TODO: get election data by indexing through database
+                //var elecIndex
+                //for(i=0; i<obj.elections.ballot.length; i++){
+                //      if(obj.elections.ballot[i].electionID  == obj.voter[corrVoter].electionID)
+                //      {elecIndex = i;}
+                //}
+
+                var payload = obj.voters[corrVoter];
+                //TODO: add election data to payload also
+
+                console.log(payload);
+                res.render('voter/ballot', payload);
+            }
         }
-        else{
-            //console.log("false");
+        else if (foundVoter ==0){
             res.status(200);
-            res.render('voter/login','null');
+            res.render('voter/login');
         }
 
     });
-
 
   // TEST
   app.post('/voter/ballot',function(req,res){
