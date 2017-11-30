@@ -1,23 +1,24 @@
 //- tou.pug
 
 extends ../layout.pug
-
 block contents
-	div.contents 
-		form#terms(method='get' action='login') 
-			div.form-group
-				p 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus accumsan leo. Sed molestie interdum leo, non volutpat ante. Nullam porttitor, nisl quis luctus eleifend, magna tellus venenatis sem, quis posuere orci dui sed purus. Duis ac turpis sapien. In et risus eget nisi posuere euismod eget sed odio. Suspendisse hendrerit ut risus nec sodales. Donec quam turpis, imperdiet eget sem dictum, euismod mollis orci. Nulla sodales velit ut volutpat fringilla. In hac habitasse platea dictumst. Cras non nulla eu ante suscipit aliquam. Integer venenatis urna vel lectus tempus, in imperdiet ex dignissim. Mauris at ex mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam id ultricies augue. Etiam cursus odio volutpat, commodo magna pulvinar, elementum nisi.
-
-				p 	Nam porttitor, dolor ac varius tempor, ligula dui accumsan elit, sed mattis massa ipsum at massa. Praesent laoreet maximus odio ac bibendum. Proin non vestibulum elit. Mauris faucibus tincidunt nibh quis fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque auctor sollicitudin libero non imperdiet. Duis sed dapibus turpis. Aenean fermentum eu libero quis porttitor. Donec mi magna, pretium id risus a, mattis elementum odio. In quis mauris at nisl fermentum blandit scelerisque vitae nibh.
-
-				p 	Duis maximus massa id nibh semper sollicitudin. Curabitur sem urna, pulvinar quis mi sed, egestas faucibus mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In feugiat aliquet vestibulum. Donec id ultrices urna, quis rhoncus tellus. Quisque lorem libero, semper quis magna porttitor, fringilla porttitor nulla. Etiam blandit sapien id lectus laoreet facilisis. Vivamus sed elementum lectus, eu consectetur velit. Nunc consequat justo in odio faucibus, ac molestie sapien pulvinar. Donec lobortis elit rhoncus nunc pulvinar lobortis. Proin pharetra accumsan ante in ullamcorper.
-				p 	Proin aliquet tincidunt lectus, non vestibulum nisi gravida non. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus bibendum molestie auctor. Aenean venenatis diam eget pulvinar scelerisque. Donec mauris urna, tempus tincidunt viverra at, fermentum at leo. Morbi quis maximus risus, in fermentum ex. Donec dictum mauris in arcu ultricies blandit. Nunc mauris ex, lobortis eu ipsum id, elementum suscipit sem. Nullam finibus felis quis tellus sodales egestas. Pellentesque et ullamcorper sem, eget feugiat nibh.
-
-				p 	Etiam massa diam, congue ac laoreet et, hendrerit at ligula. Quisque aliquet lectus vitae ligula interdum, nec sagittis ipsum interdum. Nulla cursus accumsan imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed felis risus, ultricies a dapibus luctus, blandit nec quam. Etiam vitae tincidunt est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pellentesque arcu ut leo varius malesuada. Vestibulum id pulvinar purus. Pellentesque ultricies ex ut ligula pulvinar fermentum. Etiam ligula nibh, euismod sed dapibus condimentum, finibus sed velit.
-
-	
-			div.form-group
-				label(for='termsAgree') By clicking here you agree to the terms and conditions above.
-				input#termsAgree(type='radio', name='termsAgree' required)
-			div.form-group
-				button#submit(type='submit' value='submit') Submit
+    div.contents 
+        form#terms(method='get' action='login') 
+            div.form-group
+                p Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the http://flip3.engr.oregonstate.edu:33369 website.
+                p Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
+                p By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
+                h3 Termination
+                p We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
+                p All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+                h3 Content
+                p Our Service allows you to post, store and otherwise make available certain information, text, or other material ("Content"). By agreeing to the terms of use, you are willing to provide us with your first and last name and other data necessary to verify your voting credentials with the government of the country you are a citizen of.
+                h3 Changes
+                p We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is made, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+                h3 Contact Us
+                p If you have any questions about these Terms, please contact us.
+            div.form-group
+                label(for='termsAgree') By clicking here you agree to the terms and conditions above.
+                input#termsAgree(type='radio', name='termsAgree' required)
+            div.form-group
+                button#submit(type='submit' value='submit') Submit

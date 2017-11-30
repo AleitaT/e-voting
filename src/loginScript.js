@@ -12,7 +12,7 @@ var voter = {
     	lName: "Chatterjee",
 	Birthdate: "1967-04-12"	
 };
-
+*/
 // Test correct info 
 function correctInfo() {
     document.getElementById("id").value = "ID_9247547";
@@ -21,7 +21,7 @@ function correctInfo() {
     document.getElementById("Birthdate").value = "1967-04-12";
     document.getElementById("token").value = "0111US890";
 }
-
+/*
 // Test incorrect info
 function incorrectInfo() {
     document.getElementById("id").value = "ID_11111111";
@@ -31,6 +31,9 @@ function incorrectInfo() {
     document.getElementById("token").value = "011111111";
 }
 */
+
+// Manually enter test data correctInfo or incorrectInfo
+correctInfo();
 
 // Function that returns an alert to user that the info is not correct
 var notApproved = function() {

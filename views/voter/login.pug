@@ -5,7 +5,7 @@ extends ../layout.pug
 block contents
         div.contents
                 h1 E-vote Login
-                form#login(method='POST' action='voterVerify' )
+                form#login(method='POST' action='/voterVerify' )
                         div.form-group
                                 label(for='voterID') Voter ID:
                                 input#id(type='id', placeholder='ID_123456' name='id' required)
@@ -23,6 +23,6 @@ block contents
                                 input#token(type='password', placeholder='Authorization Token' name='token' required)
                         a(href="http://#") Forgot Your Authorization Token?
                         div.form-group
-                                button#submitLogin(type='submit' onsubmit="login()" value="Submit") Submit
+                                button#submitLogin(type='submit' value="Submit") Submit
         script
                 include ../../src/loginScript.js
