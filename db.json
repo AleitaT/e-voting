@@ -5,7 +5,12 @@
 		"lastName": "",
 		"DOB": "",
 		"token": "",
-		"address": ""
+		"address": "",
+		"addressStreet": "",
+		"city": "",
+		"state": "",
+		"country": "",
+		"postalCode": 0
 	},
 	"voters": [
 	{
@@ -49,9 +54,8 @@
 			"state": "Oregon",
 			"country": "USA",
 			"postalCode": 97345,
-			"electionID": "OR7492004727625834",
+			"electionID": "OR7492004727625835",
 			"hasVoted": 0
-		
 		}	
 	],
 		
@@ -125,7 +129,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Green Party"
+						"party": "Green Party",
+						"candidateID": "C234"
  					},
  					{
  						"fname": "Jim",
@@ -134,7 +139,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Democratic Party"
+						"party": "Democratic Party",
+						"candidateID": "C214"
  					}
  				]
  			},
@@ -148,7 +154,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Communist Party"
+						 "party": "Communist Party",
+						 "candidateID": "C334"
  					},
  					{
  						"fname": "Nick",
@@ -157,18 +164,23 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Socialist Party"
+						"party": "Socialist Party",
+						"candidateID": "C356"
  					}
  				]
  			}],
  			"propositions":
  			[
  				{
+					"name": "schoolMeasure",
+					"propositionID": "P123",
  					"city": "Foster",
  					"state": "Oregon", 
  					"description": "Issue new bonds to repair school"
  				},
  				{
+					"name": "plasticMeasure",
+					"propositionID": "P321",
  					"city": "Foster",
  					"state": "Oregon",
  					"description": "Add 10 cent fee for plastic bags" 
