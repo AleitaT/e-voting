@@ -12,7 +12,7 @@ var voter = {
     	lName: "Chatterjee",
 	Birthdate: "1967-04-12"	
 };
-
+*/
 // Test correct info 
 function correctInfo() {
     document.getElementById("id").value = "ID_9247547";
@@ -21,7 +21,7 @@ function correctInfo() {
     document.getElementById("Birthdate").value = "1967-04-12";
     document.getElementById("token").value = "0111US890";
 }
-
+/*
 // Test incorrect info
 function incorrectInfo() {
     document.getElementById("id").value = "ID_11111111";
