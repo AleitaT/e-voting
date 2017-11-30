@@ -129,7 +129,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Green Party"
+						"party": "Green Party",
+						"candidateID": "C234"
  					},
  					{
  						"fname": "Jim",
@@ -138,7 +139,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Democratic Party"
+						"party": "Democratic Party",
+						"candidateID": "C214"
  					}
  				]
  			},
@@ -152,7 +154,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Communist Party"
+						 "party": "Communist Party",
+						 "candidateID": "C334"
  					},
  					{
  						"fname": "Nick",
@@ -161,7 +164,8 @@
  						"state": "Oregon",
  						"district": "",
  						"city": "Foster",
- 						"party": "Socialist Party"
+						"party": "Socialist Party",
+						"candidateID": "C356"
  					}
  				]
  			}],
