@@ -1,11 +1,11 @@
 // After DOM is loaded implement function
 document.addEventListener('DOMContentLoaded', getBallotInfo);
+document.addEventListener('DOMContentLoaded', displayInformation);
 
-$(document).ready(
-    function () {
-        document.getElementById('postBallot').style.display = "none";
-        document.getElementById('userVoted').style.display = "none";
-    });
+function displayInformation(){
+    document.getElementById('postBallot').style.display = "none";
+    document.getElementById('userVoted').style.display = "none";
+}
 
 // function will check if user has 
 function getBallotInfo() {
@@ -34,6 +34,8 @@ function getBallotInfo() {
 
                 // Display ballot
                 document.getElementById('postBallot').style.display = "block";
+                //let ballot = document.getElementById("postBallot");
+                //ballot.setAttribute("display", "block");
 
                 let payload = 1;
                 payload += "&token=" + token;
@@ -71,3 +73,4 @@ function getBallotInfo() {
     req.send(null);
 }
 
+//getBallotInfo();
