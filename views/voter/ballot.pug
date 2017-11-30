@@ -33,7 +33,7 @@ block contents
                         h3 #{item.position}
                         for candidate, i in item.candidates
                             label(for=item.position) #{candidate.fname} #{candidate.lname}
-                            input(type="radio" name=item.position value=item.position+i)
+                            input(type="radio" name=item.position value=candidate.candidateID)
                             br
                 br
 
