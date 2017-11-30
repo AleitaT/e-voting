@@ -24,7 +24,8 @@ block contents
             h3 You have already placed your vote
             p Thank you for your participation 
 
-        form#postBallot(method='' action='')
+        form#postBallot(method='post' action='/confirmation')
+            input(type='hidden' name='type' value='general')
             div.col-sm-8#ballotContent
                        
                 for item in elections.offices
@@ -48,7 +49,7 @@ block contents
                 br
 
                 div.form-group
-                    button#submit(type='button' onclick="getBallot()") Submit
+                    button#submit(type='submit' value="submit") Submit
 
     script
         include ../../src/ballotScript.js

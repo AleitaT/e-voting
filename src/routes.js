@@ -3,6 +3,8 @@
 const express = require('express');
 var fs = require('fs');
 let obj = require("../db.json");
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({extended: false});
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -104,7 +106,7 @@ module.exports = function(app) {
     obj.user.DOB = req.body.Birthdate;
     obj.user.token = req.body.token;
 
-      /*
+        /*
     console.log("OBJ: " + obj);
     console.log("DATA: " + req.query.myData);
     console.log("QUERY: " + req.query);
@@ -112,8 +114,6 @@ module.exports = function(app) {
     console.log("INSERTS: " + req.body.id);
     console.log("INSERTS: " + JSON.stringify(obj));
     */
-
-    //console.log("INSERTS: " + JSON.stringify(obj));
 
     res.render('voter/ballot', obj);
   });
@@ -147,15 +147,19 @@ module.exports = function(app) {
    
    // console.log("QUERY: " + req.query.voted);
    // console.log("INSERTS: " + req.query.token);
-
     res.render('voter/ballot', obj);
   });
 
-  app.get("/voter/ballot-verify", (req, res) => {
+  app.get('/voter/ballot-verify', (req, res) => {
     res.render('voter/ballot-verify', {
-      status: 200, 
-      status: 'ok', 
-      title: 'Ballot Verify', 
+      status: 200,
+      title: 'Confirm your vote'
     });
   });
+
+  app.post('/confirmation', urlencodedParser, (req, res) => {
+    console.log(req.body);
+    res.render('voter/ballot-verify', req.body);
+  });
+
 };  
