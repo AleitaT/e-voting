@@ -36,6 +36,14 @@ module.exports = function(app) {
     });
   }); 
 
+  app.get("/voter/help", (req, res) => {
+    res.render('voter/help', {
+      status: 200, 
+      status: 'ok', 
+      title: 'help', 
+    });
+  }); 
+
   app.get("/electionInfo",function(req,res){
     res.send(obj);
   });
@@ -44,7 +52,7 @@ module.exports = function(app) {
   app.post('/voterVerify',function(req,res){
       
       let inserts = [req.body.id, req.body.fName, req.body.lName, req.body.bDay, req.body.token, req.body.address];
-      //console.log(req.body);
+      
       obj.user.voterID = req.body.id;
       obj.user.firstName = req.body.fName;
       obj.user.lastName = req.body.lName;
@@ -57,42 +65,39 @@ module.exports = function(app) {
       let userElectionID; 
       for(i=0; i<obj.voters.length; i++){
 
-          if(obj.user.voterID == obj.voters[i].id)
-          {
-              corrVoter = i;
-              if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
-			foundVoter = 1;		
-             		 userElectionID = obj.voters[i].electionID;
-		}
-              break;
-          }
+        if(obj.user.voterID == obj.voters[i].id)
+        {
+          if(obj.user.firstName == obj.voters[i].firstName && obj.user.lastName == obj.voters[i].lastName && obj.user.token == obj.voters[i].token && obj.user.DOB == obj.voters[i].DOB) {
+            foundVoter = 1;		
+            corrVoter = i;
+            userElectionID = obj.voters[i].electionID;
+            break;
+		      }         
+        }
       }
       
-      let ballot; 
-      if(foundVoter==1){
-          
-	  //get election data by indexing through database
-          for(i=0; i<obj.elections.ballot.length; i++){
-              	if(obj.elections.ballot[i].electionID  == userElectionID)
-             	 ballot = obj.elections.ballot[i];
-          }
-      
+    let ballot; 
+    if(foundVoter == 1){
 
-       //let newObj = obj.user;
-       let payload = {voter:null, elections:null};
-       payload.voter = obj.voters[corrVoter];
-       payload.elections = ballot;
-       console.log(payload);
+      //get election data by indexing through database
+      for(i=0; i<obj.elections.ballot.length; i++){
+        if(obj.elections.ballot[i].electionID  == userElectionID)
+          ballot = obj.elections.ballot[i];
 
-       res.status(200);
-       res.render('voter/ballot', payload);
       }
-      
-      else if (foundVoter ==0){
-          res.status(200);
-          res.render('voter/unf');
-      }
+    
+      let payload = {voter:null, elections:null};
+      payload.voter = obj.voters[corrVoter];
+      payload.elections = ballot;
 
+      res.status(200);
+      res.render('voter/ballot', payload);
+      
+    }
+    else {
+      res.status(200);
+      res.render('voter/unf');
+    }
   });
 
   // TEST
@@ -121,10 +126,14 @@ module.exports = function(app) {
   app.get('/hasVoted', function(req,res){ 
     let numVoters = obj.voters.length;
     let position = 0;
-
+    
+    let newFile = fs.open('test.json', 'r+', function(err,fd){
+      if (err) {
+        return console.error(err);
+     }
+    });
+    
     let jsonFileObject = JSON.parse(fs.readFileSync('db.json')); 
-    //console.log(jsonFileObject);
-
     for (let i = 0; i < numVoters; i++) {
       if (jsonFileObject.voters[i].token == req.query.token){
         jsonFileObject.voters[i].hasVoted = req.query.voted; 
@@ -132,8 +141,19 @@ module.exports = function(app) {
         //console.log("HERE: " + obj.voters[i].ballot.hasVoted);
       }
     }
+    
+    //let openFile = fs.open('db.json', 'r+', function(err,fd){
+    //let openFile = fs.writeFile('db.json', jsonFileObject, function(err){
+        
+    //  });
+    //});
+
 
     //console.log(jsonFileObject);
+
+    //console.log("TEST: " + obj);
+   // console.log("Other: " + jsonFileObject);
+
     //fs.writeFileSync('db.json', jsonFileObject); 
 
     /*
@@ -142,12 +162,13 @@ module.exports = function(app) {
          jsonFileObject.result.data[dataIndex].region = updatedRegion;
       }
    }
-*/
+   */
    // console.log("THIS: " + JSON.stringify(obj.voters[position].ballot));
    
    // console.log("QUERY: " + req.query.voted);
    // console.log("INSERTS: " + req.query.token);
-    res.render('voter/ballot', obj);
+    //res.render('voter/ballot', obj);
+  //    res.render('voter/ballot', obj);
   });
 
   app.get('/voter/ballot-verify', (req, res) => {
@@ -159,7 +180,7 @@ module.exports = function(app) {
 
   app.post('/confirmation', urlencodedParser, (req, res) => {
     console.log(req.body);
-    res.render('voter/ballot-verify', req.body);
+    res.render('voter/ballotSubmitted', req.body);
   });
 
 };  

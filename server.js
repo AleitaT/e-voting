@@ -10,7 +10,7 @@ app.disable('x-powered-by');
 app.set('views', './views');
 app.set('view engine', 'pug');
 // set port here 
-app.set('port', 33369);
+app.set('port', 33370);
 
 app.use(express.static(__dirname + '/public'));
 

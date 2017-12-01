@@ -33,7 +33,7 @@
 			"country": "USA",
 			"postalCode": 97345,
 			"electionID": "OR7492004727625834",
-			"hasVoted": 0
+			"hasVoted": 1
 	},
 	{
 			"id": "ID_9247547",
@@ -111,7 +111,17 @@
  						"party": "Socialist Party"
  					}
  				]
- 			}]
+ 			}],
+			"propositions":
+ 			[
+ 				{
+					"name": "firefighterPension",
+					"propositionID": "P123",
+ 					"city": "Foster",
+ 					"state": "Oregon", 
+ 					"description": "Eliminate firefighters pension"
+ 				}
+ 			]
  		},
  		{
  			"bID": 23536,
