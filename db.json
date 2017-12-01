@@ -176,14 +176,14 @@
 					"propositionID": "P123",
  					"city": "Foster",
  					"state": "Oregon", 
- 					"description": "Issue new bonds to repair school"
+ 					"description": "Issue new bonds to repair school?"
  				},
  				{
 					"name": "plasticMeasure",
 					"propositionID": "P321",
  					"city": "Foster",
  					"state": "Oregon",
- 					"description": "Add 10 cent fee for plastic bags" 
+ 					"description": "Add 10 cent fee for plastic bags?" 
  				}
  			]
  
