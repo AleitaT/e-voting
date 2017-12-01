@@ -28,13 +28,13 @@ We use sass to produce our CSS templates. Run the following command to compile y
 
 ## Running the service 
 
-### Runnin on your local server:
+### Running on your local server:
 
 		$ node server.js
 
 Will make your dev environment available at: 
 	
-		<youripaddress>:33369
+		<youripaddress>:33370
 
 ### Running on flip server: 
 
@@ -43,7 +43,7 @@ Will make your dev environment available at:
 
 Will make your dev environment avaialble at: 
 
-		<flip#>.engr.oregonstate.edu:33369
+		http://flip3.engr.oregonstate.edu:33370/
 
 ### Viewing the instance
 
