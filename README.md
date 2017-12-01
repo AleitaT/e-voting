@@ -34,7 +34,7 @@ We use sass to produce our CSS templates. Run the following command to compile y
 
 Will make your dev environment available at: 
 	
-		<youripaddress>:33369
+		<youripaddress>:33370
 
 ### Running on flip server: 
 
