@@ -28,7 +28,7 @@ We use sass to produce our CSS templates. Run the following command to compile y
 
 ## Running the service 
 
-### Runnin on your local server:
+### Running on your local server:
 
 		$ node server.js
 
