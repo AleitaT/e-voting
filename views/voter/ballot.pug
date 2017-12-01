@@ -35,6 +35,8 @@ block contents
                             label(for=item.position) #{candidate.fname} #{candidate.lname}
                             input(type="radio" name=item.position value=candidate.candidateID)
                             br
+                        label(for=item.position) None
+                        input(type="radio" name=item.position value="none")
                 br
 
                 for item in elections.propositions
@@ -46,6 +48,8 @@ block contents
                         label(for=item.name) NO
                         input(type="radio" name=item.name value=item.propositionID)
                         br
+                        label(for=item.position) None
+                        input(type="radio" name=item.position value="none" required)
                 br
 
                 div.form-group
