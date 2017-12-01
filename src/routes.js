@@ -87,7 +87,6 @@ module.exports = function(app) {
             ballot = obj.elections.ballot[i];
       }
     
-      //let newObj = obj.user;
       let payload = {voter:null, elections:null};
       payload.voter = obj.voters[corrVoter];
       payload.elections = ballot;
@@ -96,8 +95,7 @@ module.exports = function(app) {
       res.status(200);
       res.render('voter/ballot', payload);
       }
-      
-      else if (foundVoter ==0){
+	else if (foundVoter ==0){
           res.status(200);
           res.render('voter/unf');
       }
