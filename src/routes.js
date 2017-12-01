@@ -60,37 +60,37 @@ module.exports = function(app) {
           if(obj.user.voterID == obj.voters[i].id)
           {
               corrVoter = i;
-              foundVoter = 1;
-              userElectionID = obj.voters[i].electionID;
+              if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
+			foundVoter = 1;		
+             		 userElectionID = obj.voters[i].electionID;
+		}
               break;
           }
       }
       
       let ballot; 
       if(foundVoter==1){
-        if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
-
-          //TODO: get election data by indexing through database
-          for(i=0; i<obj.elections.ballot.length; i++){
-
-            if(obj.elections.ballot[i].electionID  == userElectionID)
-              ballot = obj.elections.ballot[i];
-          }
           
+	  //get election data by indexing through database
+          for(i=0; i<obj.elections.ballot.length; i++){
+              	if(obj.elections.ballot[i].electionID  == userElectionID)
+             	 ballot = obj.elections.ballot[i];
+          }
+      
 
-          //let newObj = obj.user;
-          let payload = {voter:null, elections:null};
-          payload.voter = obj.voters[corrVoter];
-          payload.elections = ballot;
-          console.log(payload);
+       //let newObj = obj.user;
+       let payload = {voter:null, elections:null};
+       payload.voter = obj.voters[corrVoter];
+       payload.elections = ballot;
+       console.log(payload);
 
-          res.status(200);
-          res.render('voter/ballot', payload);
-        }
+       res.status(200);
+       res.render('voter/ballot', payload);
       }
+      
       else if (foundVoter ==0){
           res.status(200);
-          res.render('voter/login');
+          res.render('voter/unf');
       }
 
   });
