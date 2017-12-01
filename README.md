@@ -43,7 +43,7 @@ Will make your dev environment available at:
 
 Will make your dev environment avaialble at: 
 
-		<flip#>.engr.oregonstate.edu:33369
+		http://flip3.engr.oregonstate.edu:33370/
 
 ### Viewing the instance
 
