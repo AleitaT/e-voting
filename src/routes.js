@@ -36,6 +36,14 @@ module.exports = function(app) {
     });
   }); 
 
+  app.get("/voter/help", (req, res) => {
+    res.render('voter/help', {
+      status: 200, 
+      status: 'ok', 
+      title: 'help', 
+    });
+  }); 
+
   app.get("/electionInfo",function(req,res){
     res.send(obj);
   });
@@ -70,7 +78,8 @@ module.exports = function(app) {
       
       let ballot; 
       if(foundVoter==1){
-          
+        if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
+
 	  //get election data by indexing through database
           for(i=0; i<obj.elections.ballot.length; i++){
               	if(obj.elections.ballot[i].electionID  == userElectionID)
@@ -121,10 +130,14 @@ module.exports = function(app) {
   app.get('/hasVoted', function(req,res){ 
     let numVoters = obj.voters.length;
     let position = 0;
-
+    
+    let newFile = fs.open('test.json', 'r+', function(err,fd){
+      if (err) {
+        return console.error(err);
+     }
+    });
+    
     let jsonFileObject = JSON.parse(fs.readFileSync('db.json')); 
-    //console.log(jsonFileObject);
-
     for (let i = 0; i < numVoters; i++) {
       if (jsonFileObject.voters[i].token == req.query.token){
         jsonFileObject.voters[i].hasVoted = req.query.voted; 
@@ -132,8 +145,19 @@ module.exports = function(app) {
         //console.log("HERE: " + obj.voters[i].ballot.hasVoted);
       }
     }
+    
+    //let openFile = fs.open('db.json', 'r+', function(err,fd){
+    //let openFile = fs.writeFile('db.json', jsonFileObject, function(err){
+        
+    //  });
+    //});
+
 
     //console.log(jsonFileObject);
+
+    //console.log("TEST: " + obj);
+   // console.log("Other: " + jsonFileObject);
+
     //fs.writeFileSync('db.json', jsonFileObject); 
 
     /*
@@ -142,12 +166,13 @@ module.exports = function(app) {
          jsonFileObject.result.data[dataIndex].region = updatedRegion;
       }
    }
-*/
+   */
    // console.log("THIS: " + JSON.stringify(obj.voters[position].ballot));
    
    // console.log("QUERY: " + req.query.voted);
    // console.log("INSERTS: " + req.query.token);
-    res.render('voter/ballot', obj);
+    //res.render('voter/ballot', obj);
+  //    res.render('voter/ballot', obj);
   });
 
   app.get('/voter/ballot-verify', (req, res) => {
@@ -159,7 +184,7 @@ module.exports = function(app) {
 
   app.post('/confirmation', urlencodedParser, (req, res) => {
     console.log(req.body);
-    res.render('voter/ballot-verify', req.body);
+    res.render('voter/ballotSubmitted', req.body);
   });
 
 };  

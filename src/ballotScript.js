@@ -59,9 +59,7 @@ function getBallotInfo() {
                 });
                 
                 newReq.send(null);
-
                 */
-
             }
             else // User has already voted; Display a response stating that their ballot has already been submitted
                 document.getElementById('userVoted').style.display = "block";
