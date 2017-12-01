@@ -52,7 +52,7 @@ module.exports = function(app) {
   app.post('/voterVerify',function(req,res){
       
       let inserts = [req.body.id, req.body.fName, req.body.lName, req.body.bDay, req.body.token, req.body.address];
-      //console.log(req.body);
+      
       obj.user.voterID = req.body.id;
       obj.user.firstName = req.body.fName;
       obj.user.lastName = req.body.lName;
@@ -67,38 +67,35 @@ module.exports = function(app) {
 
         if(obj.user.voterID == obj.voters[i].id)
         {
-          corrVoter = i;
-          if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
-			      foundVoter = 1;		
+          if(obj.user.firstName == obj.voters[i].firstName && obj.user.lastName == obj.voters[i].lastName && obj.user.token == obj.voters[i].token && obj.user.DOB == obj.voters[i].DOB) {
+            foundVoter = 1;		
+            corrVoter = i;
             userElectionID = obj.voters[i].electionID;
-		      }
-        
-          break;
+            break;
+		      }         
         }
       }
       
     let ballot; 
-    if(foundVoter==1){
-      if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
+    if(foundVoter == 1){
 
       //get election data by indexing through database
       for(i=0; i<obj.elections.ballot.length; i++){
-            if(obj.elections.ballot[i].electionID  == userElectionID)
-            ballot = obj.elections.ballot[i];
+        if(obj.elections.ballot[i].electionID  == userElectionID)
+          ballot = obj.elections.ballot[i];
       }
     
       let payload = {voter:null, elections:null};
       payload.voter = obj.voters[corrVoter];
       payload.elections = ballot;
-      console.log(payload);
 
       res.status(200);
       res.render('voter/ballot', payload);
-      }
-	else if (foundVoter ==0){
-          res.status(200);
-          res.render('voter/unf');
-      }
+      
+    }
+    else {
+      res.status(200);
+      res.render('voter/unf');
     }
   });
 
