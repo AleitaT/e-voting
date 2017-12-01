@@ -19,6 +19,7 @@ function getBallotInfo() {
             let response = JSON.parse(req.responseText);
             
             let token = document.getElementById("voterAuthToken").textContent;
+            console.log("token ", token);
             let numvoters = response.voters.length;
 
             // Used to validate whether the user has voted 
@@ -26,8 +27,10 @@ function getBallotInfo() {
 
             // Check whether the user has voted
             for (let i = 0; i < numvoters; i++) {
-                if (response.voters[i].token = token) 
+                if (response.voters[i].token == token)
                     hasVoted = response.voters[i].hasVoted;
+                    console.log("hasVoted ", hasVoted);
+                    break;
             }
 
             if (!hasVoted) { // If user has not voted then display ballot
