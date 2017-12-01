@@ -68,8 +68,10 @@ module.exports = function(app) {
           if(obj.user.voterID == obj.voters[i].id)
           {
               corrVoter = i;
-              foundVoter = 1;
-              userElectionID = obj.voters[i].electionID;
+              if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
+			foundVoter = 1;		
+             		 userElectionID = obj.voters[i].electionID;
+		}
               break;
           }
       }
@@ -78,25 +80,26 @@ module.exports = function(app) {
       if(foundVoter==1){
         if(obj.user.firstName == obj.voters[corrVoter].firstName && obj.user.lastName == obj.voters[corrVoter].lastName && obj.user.token == obj.voters[corrVoter].token) {
 
-          //TODO: get election data by indexing through database
+	  //get election data by indexing through database
           for(i=0; i<obj.elections.ballot.length; i++){
-
-            if(obj.elections.ballot[i].electionID  == userElectionID)
-              ballot = obj.elections.ballot[i];
+              	if(obj.elections.ballot[i].electionID  == userElectionID)
+             	 ballot = obj.elections.ballot[i];
           }
-          
-          let payload = {voter:null, elections:null};
-          payload.voter = obj.voters[corrVoter];
-          payload.elections = ballot;
-          console.log(payload);
+      
 
-          res.status(200);
-          res.render('voter/ballot', payload);
-        }
+       //let newObj = obj.user;
+       let payload = {voter:null, elections:null};
+       payload.voter = obj.voters[corrVoter];
+       payload.elections = ballot;
+       console.log(payload);
+
+       res.status(200);
+       res.render('voter/ballot', payload);
       }
+      
       else if (foundVoter ==0){
           res.status(200);
-          res.render('voter/login');
+          res.render('voter/unf');
       }
 
   });
@@ -135,7 +138,6 @@ module.exports = function(app) {
     });
     
     let jsonFileObject = JSON.parse(fs.readFileSync('db.json')); 
-
     for (let i = 0; i < numVoters; i++) {
       if (jsonFileObject.voters[i].token == req.query.token){
         jsonFileObject.voters[i].hasVoted = req.query.voted; 
@@ -155,6 +157,7 @@ module.exports = function(app) {
 
     //console.log("TEST: " + obj);
    // console.log("Other: " + jsonFileObject);
+
     //fs.writeFileSync('db.json', jsonFileObject); 
 
     /*
@@ -169,6 +172,7 @@ module.exports = function(app) {
    // console.log("QUERY: " + req.query.voted);
    // console.log("INSERTS: " + req.query.token);
     //res.render('voter/ballot', obj);
+  //    res.render('voter/ballot', obj);
   });
 
   app.get('/voter/ballot-verify', (req, res) => {
@@ -180,8 +184,7 @@ module.exports = function(app) {
 
   app.post('/confirmation', urlencodedParser, (req, res) => {
     console.log(req.body);
-
-    res.render('voter/ballot-verify', req.body);
+    res.render('voter/ballotSubmitted', req.body);
   });
 
 };  
