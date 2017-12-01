@@ -83,6 +83,7 @@ module.exports = function(app) {
       for(i=0; i<obj.elections.ballot.length; i++){
         if(obj.elections.ballot[i].electionID  == userElectionID)
           ballot = obj.elections.ballot[i];
+
       }
     
       let payload = {voter:null, elections:null};
